@@ -102,8 +102,10 @@ func (r *LuaReader) loadConstants() []interface{} {
 		switch tag {
 		case TAG_NIL:
 			constants[i] = nil
-		case TAG_BOOLEAN:
-			constants[i] = tag != 0
+		case TAG_FALSE:
+			constants[i] = false
+		case TAG_TRUE:
+			constants[i] = true
 		case TAG_NUMBER:
 			constants[i] = r.loadLuaNumber()
 		case TAG_INTERER:

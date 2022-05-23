@@ -16,6 +16,8 @@ const (
 const (
 	TAG_NIL       = 0x00
 	TAG_BOOLEAN   = 0x01
+	TAG_FALSE     = TAG_BOOLEAN
+	TAG_TRUE      = TAG_BOOLEAN | 0x10
 	TAG_NUMBER    = 0x03
 	TAG_INTERER   = 0x13
 	TAG_SHORT_STR = 0x04

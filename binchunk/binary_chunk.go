@@ -63,8 +63,8 @@ type Prototype struct {
 	// 子函数原型
 	Protos []*Prototype
 	// 调试信息
-	LineInfo     []byte        // 行号表
-	AbsLineInfo  []AbsLineInfo // 行号表
+	LineInfo     []byte        // 增量行号表
+	AbsLineInfo  []AbsLineInfo // 绝对行号表
 	LocVars      []LocVar      // 局部变量表
 	UpvalueNames []string      // _ENV
 }
