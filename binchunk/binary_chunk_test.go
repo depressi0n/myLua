@@ -2,6 +2,7 @@ package binchunk
 
 import (
 	"fmt"
+	"github.com/depressi0n/myLua/vm"
 	"os"
 	"testing"
 )
@@ -70,7 +71,10 @@ func printCode(fc *Prototype) {
 		if len(fc.LineInfo) > 0 {
 			line = fmt.Sprintf("%d", fc.LineInfo[pc])
 		}
-		fmt.Printf("\t%d\t[%s]\t0x%08X\n", pc+1, line, c)
+		i := vm.Instruction(c)
+		fmt.Printf("\t%d\t[%s]\t%s \t", pc+1, line, i.OpName())
+		vm.PrintOprands(i)
+		fmt.Println()
 	}
 }
 
